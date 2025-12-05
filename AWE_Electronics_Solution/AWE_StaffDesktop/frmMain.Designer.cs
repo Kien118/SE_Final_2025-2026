@@ -35,8 +35,12 @@
             this.managementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deliveryShippingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
+            this.btnDelivery = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             this.managementToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,45 +62,57 @@
             this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit ";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // managementToolStripMenuItem
             // 
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productsToolStripMenuItem,
-            this.importWarehouseToolStripMenuItem});
+            this.importWarehouseToolStripMenuItem,
+            this.deliveryShippingToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
-            this.managementToolStripMenuItem.Size = new System.Drawing.Size(111, 24);
+            this.managementToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.managementToolStripMenuItem.Text = "Management";
             // 
             // productsToolStripMenuItem
             // 
             this.productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            this.productsToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.productsToolStripMenuItem.Text = "Products";
+            this.productsToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.productsToolStripMenuItem.Text = "Products Management";
+            this.productsToolStripMenuItem.Click += new System.EventHandler(this.productsToolStripMenuItem_Click);
             // 
             // importWarehouseToolStripMenuItem
             // 
             this.importWarehouseToolStripMenuItem.Name = "importWarehouseToolStripMenuItem";
-            this.importWarehouseToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
-            this.importWarehouseToolStripMenuItem.Text = "GoodReceipt";
+            this.importWarehouseToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.importWarehouseToolStripMenuItem.Text = "Import Goods";
+            this.importWarehouseToolStripMenuItem.Click += new System.EventHandler(this.importWarehouseToolStripMenuItem_Click);
+            // 
+            // deliveryShippingToolStripMenuItem
+            // 
+            this.deliveryShippingToolStripMenuItem.Name = "deliveryShippingToolStripMenuItem";
+            this.deliveryShippingToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.deliveryShippingToolStripMenuItem.Text = "Delivery / Shipping";
+            this.deliveryShippingToolStripMenuItem.Click += new System.EventHandler(this.deliveryShippingToolStripMenuItem_Click);
             // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(146, 150);
+            this.btnProduct.Location = new System.Drawing.Point(66, 283);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(164, 54);
             this.btnProduct.TabIndex = 1;
@@ -106,7 +122,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(403, 150);
+            this.btnImport.Location = new System.Drawing.Point(271, 283);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(156, 54);
             this.btnImport.TabIndex = 2;
@@ -114,11 +130,44 @@
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btnDelivery
+            // 
+            this.btnDelivery.Location = new System.Drawing.Point(467, 283);
+            this.btnDelivery.Name = "btnDelivery";
+            this.btnDelivery.Size = new System.Drawing.Size(159, 54);
+            this.btnDelivery.TabIndex = 3;
+            this.btnDelivery.Text = "Management Delivery Note (Ship)";
+            this.btnDelivery.UseVisualStyleBackColor = true;
+            this.btnDelivery.Click += new System.EventHandler(this.btnDelivery_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(194, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(326, 37);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "AWE ELECTRONICS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.Location = new System.Drawing.Point(253, 187);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(185, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "STAFF DESKTOP";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnDelivery);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.btnProduct);
             this.Controls.Add(this.menuStrip1);
@@ -143,5 +192,9 @@
         private System.Windows.Forms.ToolStripMenuItem importWarehouseToolStripMenuItem;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnDelivery;
+        private System.Windows.Forms.ToolStripMenuItem deliveryShippingToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -43,5 +43,56 @@ namespace AWE_StaffDesktop
         {
             this.Close(); // Đóng Main, sẽ quay về Login (do logic ở Program.cs hoặc frmLogin)
         }
+
+        private void btnDelivery_Click(object sender, EventArgs e)
+        {
+            // Lấy ID nhân viên hiện tại (nếu chưa có biến _currentStaff thì tạm thời điền số 2)
+            int currentStaffID = _currentStaff != null ? _currentStaff.StaffID : 2;
+
+            // Mở form Delivery
+            frmDelivery f = new frmDelivery(currentStaffID);
+            f.ShowDialog();
+        }
+
+        private void importWarehouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int staffID = _currentStaff != null ? _currentStaff.StaffID : 2;
+
+            // Code mở Form Nhập kho
+            frmGoodsReceipt f = new frmGoodsReceipt(staffID);
+            f.ShowDialog();
+        }
+
+        
+
+        private void deliveryShippingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int staffID = _currentStaff != null ? _currentStaff.StaffID : 2;
+
+            // Code mở Form Xuất kho / Giao hàng
+            frmDelivery f = new frmDelivery(staffID);
+            f.ShowDialog();
+        }
+
+        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProduct f = new frmProduct();
+            f.ShowDialog();
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Đóng Form Main -> Tự động quay về Form Login (do cơ chế ShowDialog ở Login)
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

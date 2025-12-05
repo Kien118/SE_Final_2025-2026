@@ -35,17 +35,17 @@ namespace AWE_StaffDesktop
                 // 3. Kiểm tra kết quả
                 if (staffAccount != null)
                 {
-                    MessageBox.Show($"Đăng nhập thành công!\nXin chào: {staffAccount.FullName} ({staffAccount.Role})",
-                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng nhập thành công!");
 
-                    // 4. Mở Form Main (Form chính của ứng dụng)
-                    // Lưu ý: Bạn cần tạo frmMain trước hoặc thay frmProduct vào đây tạm cũng được
-                    frmProduct mainForm = new frmProduct(); // Truyền user sang để phân quyền
-                    this.Hide(); // Ẩn form login   
-                    mainForm.ShowDialog(); // Hiện form main
+                    // Mở Form Main và truyền user sang
+                    frmMain main = new frmMain(staffAccount);
 
-                    // Khi form Main đóng thì đóng luôn ứng dụng
-                    this.Close();
+                    this.Hide(); // Ẩn Login
+                    main.ShowDialog(); // Hiện Main
+
+                    // Khi Main đóng lại (Đăng xuất), thì hiện lại Login
+                    this.Show();
+                    txtPass.Text = ""; // Xóa pass đi cho an toàn
                 }
                 else
                 {

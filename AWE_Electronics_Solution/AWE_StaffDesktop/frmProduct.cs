@@ -30,12 +30,12 @@ namespace AWE_StaffDesktop
             dgvProducts.DataSource = bll.GetProductList();
         }
 
-        // Nút THÊM
+        // Add button
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string selectedCatID = cboCategory.SelectedValue.ToString();
 
-            // Gọi hàm thêm mới (lúc này categoryID là số chuẩn từ DB)
+            
             string msg = bll.AddNewProduct(
                 txtName.Text,
                 selectedCatID,

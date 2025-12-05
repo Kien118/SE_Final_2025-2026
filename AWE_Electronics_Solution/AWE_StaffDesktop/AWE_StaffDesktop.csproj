@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +92,10 @@
     <ProjectReference Include="..\AWE_BLL\AWE_BLL.csproj">
       <Project>{991a90b8-27e5-4742-9391-5d3f66c79f43}</Project>
       <Name>AWE_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AWE_DTO\AWE_DTO.csproj">
+      <Project>{923fb360-216b-4858-8b86-68a265a16554}</Project>
+      <Name>AWE_DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

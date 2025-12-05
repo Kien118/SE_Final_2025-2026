@@ -44,11 +44,16 @@
     <Compile Include="Class1.cs" />
     <Compile Include="ProductBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StaffBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AWE_DAL\AWE_DAL.csproj">
       <Project>{70d4b2d3-41d4-45dd-9eee-74521538bcf6}</Project>
       <Name>AWE_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AWE_DTO\AWE_DTO.csproj">
+      <Project>{923fb360-216b-4858-8b86-68a265a16554}</Project>
+      <Name>AWE_DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

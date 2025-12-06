@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{991A90B8-27E5-4742-9391-5D3F66C79F43}</ProjectGuid>
+    <ProjectGuid>{923FB360-216B-4858-8B86-68A265A16554}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AWE_BLL</RootNamespace>
-    <AssemblyName>AWE_BLL</AssemblyName>
+    <RootNamespace>AWE_DTO</RootNamespace>
+    <AssemblyName>AWE_DTO</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -42,22 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="GoodsReceiptBLL.cs" />
-    <Compile Include="OrderBLL.cs" />
-    <Compile Include="ProductBLL.cs" />
+    <Compile Include="GoodsReceiptDTO.cs" />
+    <Compile Include="OrderDTO.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StaffBLL.cs" />
-    <Compile Include="StatisticBLL.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AWE_DAL\AWE_DAL.csproj">
-      <Project>{70d4b2d3-41d4-45dd-9eee-74521538bcf6}</Project>
-      <Name>AWE_DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AWE_DTO\AWE_DTO.csproj">
-      <Project>{923fb360-216b-4858-8b86-68a265a16554}</Project>
-      <Name>AWE_DTO</Name>
-    </ProjectReference>
+    <Compile Include="ReportDTO.cs" />
+    <Compile Include="Staff.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

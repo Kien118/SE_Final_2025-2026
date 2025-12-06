@@ -36,11 +36,13 @@
             this.productsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importWarehouseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deliveryShippingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statisticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnDelivery = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,14 +70,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.exitToolStripMenuItem.Text = "Exit ";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -84,7 +86,8 @@
             this.managementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.productsToolStripMenuItem,
             this.importWarehouseToolStripMenuItem,
-            this.deliveryShippingToolStripMenuItem});
+            this.deliveryShippingToolStripMenuItem,
+            this.statisticalToolStripMenuItem});
             this.managementToolStripMenuItem.Name = "managementToolStripMenuItem";
             this.managementToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.managementToolStripMenuItem.Text = "Management";
@@ -110,9 +113,16 @@
             this.deliveryShippingToolStripMenuItem.Text = "Delivery / Shipping";
             this.deliveryShippingToolStripMenuItem.Click += new System.EventHandler(this.deliveryShippingToolStripMenuItem_Click);
             // 
+            // statisticalToolStripMenuItem
+            // 
+            this.statisticalToolStripMenuItem.Name = "statisticalToolStripMenuItem";
+            this.statisticalToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.statisticalToolStripMenuItem.Text = "Statistical Report";
+            this.statisticalToolStripMenuItem.Click += new System.EventHandler(this.statisticsReportToolStripMenuItem_Click);
+            // 
             // btnProduct
             // 
-            this.btnProduct.Location = new System.Drawing.Point(66, 283);
+            this.btnProduct.Location = new System.Drawing.Point(28, 283);
             this.btnProduct.Name = "btnProduct";
             this.btnProduct.Size = new System.Drawing.Size(164, 54);
             this.btnProduct.TabIndex = 1;
@@ -122,7 +132,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(271, 283);
+            this.btnImport.Location = new System.Drawing.Point(219, 283);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(156, 54);
             this.btnImport.TabIndex = 2;
@@ -132,7 +142,7 @@
             // 
             // btnDelivery
             // 
-            this.btnDelivery.Location = new System.Drawing.Point(467, 283);
+            this.btnDelivery.Location = new System.Drawing.Point(409, 283);
             this.btnDelivery.Name = "btnDelivery";
             this.btnDelivery.Size = new System.Drawing.Size(159, 54);
             this.btnDelivery.TabIndex = 3;
@@ -160,11 +170,22 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "STAFF DESKTOP";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(606, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 54);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Statistics Report";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDelivery);
@@ -196,5 +217,7 @@
         private System.Windows.Forms.ToolStripMenuItem deliveryShippingToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem statisticalToolStripMenuItem;
     }
 }

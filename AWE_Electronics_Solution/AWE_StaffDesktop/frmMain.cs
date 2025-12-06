@@ -94,5 +94,19 @@ namespace AWE_StaffDesktop
         {
             Application.Exit();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statisticsReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            frmReport reportForm = new frmReport();
+
+            
+            reportForm.ShowDialog();
+        }
     }
 }

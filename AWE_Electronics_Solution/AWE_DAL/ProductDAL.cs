@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using AWE_DTO;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace AWE_DAL
@@ -99,6 +102,39 @@ namespace AWE_DAL
                 da.Fill(dt);
                 return dt;
             }
+        }
+
+        // Hàm trả về List để Web dùng cho dễ
+        // Hàm trả về List để Web dùng cho dễ
+        public List<Product> GetProductList()
+        {
+            List<Product> list = new List<Product>();
+
+            // SỬA Ở ĐÂY: Dùng DBContext.GetConnection() thay vì new SqlConnection(connectionString)
+            using (SqlConnection conn = DBContext.GetConnection())
+            {
+                // Join Category để lấy tên danh mục cho đẹp
+                string query = @"SELECT p.ProductID, p.Name, p.Price, p.StockQuantity, c.Name as CategoryName 
+                         FROM Products p 
+                         LEFT JOIN Categories c ON p.CategoryID = c.CategoryID";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    list.Add(new Product()
+                    {
+                        ProductID = (int)reader["ProductID"],
+                        Name = reader["Name"].ToString(),
+                        Price = (decimal)reader["Price"],
+                        StockQuantity = (int)reader["StockQuantity"],
+                        // Kiểm tra null để tránh lỗi nếu sản phẩm không có danh mục
+                        CategoryName = reader["CategoryName"] != DBNull.Value ? reader["CategoryName"].ToString() : "N/A"
+                    });
+                }
+            }
+            return list;
         }
     }
 }

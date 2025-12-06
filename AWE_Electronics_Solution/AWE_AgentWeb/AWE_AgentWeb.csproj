@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,6 +178,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -213,6 +215,10 @@
     <ProjectReference Include="..\AWE_BLL\AWE_BLL.csproj">
       <Project>{991a90b8-27e5-4742-9391-5d3f66c79f43}</Project>
       <Name>AWE_BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AWE_DTO\AWE_DTO.csproj">
+      <Project>{923fb360-216b-4858-8b86-68a265a16554}</Project>
+      <Name>AWE_DTO</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

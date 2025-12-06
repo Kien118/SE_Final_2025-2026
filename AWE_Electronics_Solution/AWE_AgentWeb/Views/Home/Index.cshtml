@@ -1,33 +1,52 @@
-﻿@{
+﻿@model List<AWE_DTO.Product>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
-
-    <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+<div class="row">
+    <div class="col-md-12 text-right" style="margin-top: 20px;">
+        <span class="text-success">Hi, <b>@ViewBag.UserName</b>!</span>
+        <a href="/Account/Logout" class="btn btn-danger btn-sm" style="margin-left: 10px;">Logout</a>
     </div>
-</main>
+</div>
+<hr />
+
+<div class="jumbotron">
+    <h1>AWE Electronics Store</h1>
+    <p class="lead">Welcome to our online ordering platform, dear agent.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Latest Product List</h2>
+        <hr />
+    </div>
+
+    @* Vòng lặp hiển thị từng sản phẩm *@
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="col-md-4" style="margin-bottom: 30px;">
+                <div class="card" style="border: 1px solid #ddd; padding: 15px; border-radius: 5px;">
+                    <img src="https://via.placeholder.com/300x200" alt="@item.Name" style="width:100%; height: 200px; object-fit: cover;">
+
+                    <h3 style="font-size: 18px; margin-top: 10px;">@item.Name</h3>
+                    <p class="text-muted">Category: @item.CategoryName</p>
+
+                    <h4 style="color: #d9534f;">@item.Price.ToString("N0") VNĐ</h4>
+
+                    <p>Stock Quantity: <b>@item.StockQuantity</b></p>
+
+                    <a href="#" class="btn btn-primary">Add to cart</a>
+                    <a href="#" class="btn btn-default">Detail</a>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-danger">Can't load product detail'.</p>
+    }
+</div>

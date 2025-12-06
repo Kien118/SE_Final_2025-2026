@@ -7,8 +7,24 @@ namespace AWE_DAL
     {
         public static SqlConnection GetConnection()
         {
-            // Đọc chuỗi kết nối có tên "AWE_ConnStr" từ App.config
-            string strConn = ConfigurationManager.ConnectionStrings["AWE_ConnStr"].ConnectionString;
+            // 1. Chuỗi kết nối cứng (Hardcode) - Đảm bảo luôn chạy được dù Config lỗi
+            string strConn = @"Data Source=LAPTOP-MUKSC0GV\KIENMSSERVER;Initial Catalog=AWE_Electronics_DB;Integrated Security=True";
+
+            try
+            {
+                // 2. Thử đọc từ Config (Ưu tiên đọc từ Config nếu có)
+                var configEntry = ConfigurationManager.ConnectionStrings["AWE_ConnStr"];
+                if (configEntry != null)
+                {
+                    strConn = configEntry.ConnectionString;
+                }
+            }
+            catch
+            {
+                // Nếu lỗi đọc Config thì cứ lờ đi và dùng chuỗi cứng ở trên
+            }
+
+            // 3. Trả về kết nối
             return new SqlConnection(strConn);
         }
     }

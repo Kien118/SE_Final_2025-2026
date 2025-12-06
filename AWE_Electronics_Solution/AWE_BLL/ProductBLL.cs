@@ -1,7 +1,8 @@
 ﻿using AWE_DAL;
 using System.Data;
 using System;
-
+using System.Collections.Generic; // [MỚI] Cần thêm dòng này để dùng List<>
+using AWE_DTO; // [MỚI] Cần thêm dòng này để hiểu Product
 namespace AWE_BLL
 {
     public class ProductBLL
@@ -73,6 +74,12 @@ namespace AWE_BLL
                 return "Xóa thành công!";
             else
                 return "Lỗi khi xóa (Có thể sản phẩm này đang nằm trong đơn hàng cũ)!";
+        }
+
+        public List<Product> GetProductsForWeb()
+        {
+            // Gọi xuống hàm GetProductList mà bạn vừa sửa trong DAL
+            return dal.GetProductList();
         }
     }
 }

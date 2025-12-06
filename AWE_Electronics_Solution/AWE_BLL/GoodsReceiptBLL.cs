@@ -19,5 +19,16 @@ namespace AWE_BLL
 
             return dal.CreateReceipt(note);
         }
+
+        // Hàm này dùng để test logic tính tổng tiền (Business Logic)
+        // Chúng ta tách nó ra để dễ Unit Test mà không cần gọi xuống Database
+        public decimal CalculateLineTotal(int quantity, decimal price)
+        {
+            // Validate dữ liệu (Logic nghiệp vụ)
+            if (quantity < 0) throw new ArgumentException("Số lượng không được âm");
+            if (price < 0) throw new ArgumentException("Giá không được âm");
+
+            return quantity * price;
+        }
     }
 }
